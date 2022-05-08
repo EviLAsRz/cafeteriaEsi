@@ -23,11 +23,11 @@
         <div class="hero-wrapper">
             <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
         </div>
-        <h3 class="mt-4 mb-2">No Orders Yet.</h3>
-        <p class="text-muted">No customers with unfulfilled orders for now...</p>
+        <h3 class="mt-4 mb-2">Sin pedidos aun.</h3>
+        <p class="text-muted">No hay clientes con pedidos sin completar por ahora...</p>
         <div class="d-flex mt-3">
-            <a href="{{ route('previousOrder') }}" class="primary-btn mx-3">Previous Orders</a>
-            <a href="{{ route('dashboard') }}" class="primary-btn mx-3">View Dashboard</a>
+            <a href="{{ route('previousOrder') }}" class="primary-btn mx-3">Pedidos previos</a>
+            <a href="{{ route('dashboard') }}" class="primary-btn mx-3">Ver panel</a>
         </div>
     </div>
 </section>
@@ -70,13 +70,13 @@
                                 <form action="{{ route('orderStatusUpdate', $orderItem->id) }}" method="post">
                                     @csrf
                                     @method('PUT')
-                                    <button class="primary-btn px-3 unfulfill">Unfulfill</button>
+                                    <button class="primary-btn px-3 unfulfill">No completados</button>
                                 </form>
                             @else
                                 <form action="{{ route('orderStatusUpdate', $orderItem->id) }}" method="post">
                                     @csrf
                                     @method('PUT')
-                                    <button class="primary-btn px-3 fulfill">Fulfill</button>
+                                    <button class="primary-btn px-3 fulfill">Completados</button>
                                 </form>                                
                             @endif
                             </div>
@@ -99,7 +99,7 @@
 
         @if (!$activeOrders->count())
         <div class="d-flex justify-content-center">
-            <a href="{{ route('previousOrder') }}" class="primary-btn">Previous Orders</a>
+            <a href="{{ route('previousOrder') }}" class="primary-btn">Pedidos previos</a>
         </div>
         @endif
 
@@ -110,15 +110,15 @@
 @if ($activeOrders->count())
 <section class="kitchen-active-orders">
     <div class="container">
-        <h2 class="mb-4">Active Orders</h2>
+        <h2 class="mb-4">Pedidos activos</h2>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Order ID</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Final Price</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Pedido ID</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Precio final</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -148,7 +148,7 @@
             </tbody>
         </table>
         <div class="mt-5 d-flex justify-content-between">
-            <a href="{{ route('previousOrder') }}" class="primary-btn">Previous Orders</a>
+            <a href="{{ route('previousOrder') }}" class="primary-btn">Ordenes previas</a>
             {{ $activeOrders->links() }}
         </div>
     </div>

@@ -1,9 +1,3 @@
-<!-- 
-    Programmer Name: Mr. Lai Pin Cheng, Developer
-    Description: Page where admin may view and update menu while customer can view menu and add menu to cart
-    Edited on: 14 April 2022
- -->
-
 @extends(( !Auth::check() || auth()->user()->role == 'customer' ) ? 'layouts.app' : 'layouts.backend' )
 
 @section('links')
@@ -43,16 +37,16 @@
                         <form method='post' action="{{ route('saveMenuItem') }}" enctype="multipart/form-data" class="px-4 py-3" style="min-width: 350px">
                             @csrf
                             <div class="mb-2">
-                                <label for="formFile" class="form-label">Item Image</label>
+                                <label for="formFile" class="form-label">Imagen del producto</label>
                                 <input name="menuImage" class="form-control" type="file" id="item-image" required>
                             </div>
                             
                             <div class="dropdown-divider"></div>
 
                             <div class="mb-2">
-                                <label for="ItemType" class="form-label">Item Type</label>
+                                <label for="ItemType" class="form-label">Categoría del producto</label>
                                 <div class="input-group mb-3">
-                                    <label class="input-group-text" for="itemTypeInputGroup">Type:</label>
+                                    <label class="input-group-text" for="itemTypeInputGroup">Categoría:</label>
                                     <select name="menuType" class="form-select" id="itemTypeInputGroup" >
                                         <option name="menuType" value="Bocadillo">Bocadillo</option>
                                         <option name="menuType" value="Dulce">Dulce</option>
@@ -69,7 +63,7 @@
                             <div class="dropdown-divider"></div>
 
                             <div class="mb-1">
-                                <label for="ItemName" class="form-label">Item Name</label>
+                                <label for="ItemName" class="form-label">Nombre del producto</label>
                                 <div class="input-group mb-3">
                                     <input name="menuName" type="text" class="form-control" placeholder="Name" aria-label="Item Name" required>
                                 </div>
@@ -78,9 +72,9 @@
                             <div class="dropdown-divider"></div>
 
                             <div class="mb-1">
-                                <label for="ItemPrice" class="form-label">Item Price</label>
+                                <label for="ItemPrice" class="form-label">Precio del producto</label>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">RM</span>
+                                    <span class="input-group-text">€</span>
                                     <input name="menuPrice" type="number" min=0 step=0.01 class="form-control price-class" placeholder="Price" aria-label="Item Price" required>
                                     <span class="validity"></span>
                                 </div>
@@ -89,7 +83,7 @@
                             <div class="dropdown-divider"></div>
 
                             <div class="mb-1">
-                                <label for="ItemDescription" class="form-label">Item Description</label>
+                                <label for="ItemDescription" class="form-label">Descripción del producto</label>
                                 <div class="input-group mb-3">
                                     <textarea name="menuDescription" class="form-control" placeholder="Description" aria-label="Item Description" required></textarea>
                                 </div>
@@ -99,7 +93,7 @@
                    
                             <div class="dropdown-divider"></div>
 
-                            <button type="submit" class="btn btn-outline-success">Add Item</button>
+                            <button type="submit" class="btn btn-outline-success">Añadir producto</button>
                         </form>
                     </div>
                 </div>
@@ -140,9 +134,9 @@
                     <div class="dropdown-menu">
                         <form method="get" action="{{ route('filterMenu') }}" class="px-4 py-3 " style="min-width: 350px">    
                             <div class="mb-2">
-                                <label for="ItemType" class="form-label">Item Type</label>
+                                <label for="ItemType" class="form-label">Categoría del producto</label>
                                 <div class="input-group mb-3">
-                                    <label class="input-group-text" for="itemTypeInputGroup">Type:</label>
+                                    <label class="input-group-text" for="itemTypeInputGroup">Categoría:</label>
                                     <select name="menuType" class="form-select" id="itemTypeInputGroup" >
                                         <option name="menuType" value="">All</option>
                                         <option name="menuType" value="Bocadillo">Bocadillo</option>
@@ -160,9 +154,9 @@
                             <div class="dropdown-divider"></div>
                         
                             <div class="col-12 mb-3">
-                                <label for="PriceRange" class="form-label">Price range</label>
+                                <label for="PriceRange" class="form-label">Intervalo del precio</label>
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">RM</span>
+                                    <span class="input-group-text">€</span>
                                     <input name="fromPrice" type="text" class="form-control" placeholder="From Price" aria-label="From Price">
                                     <span class="input-group-text">~</span>
                                     <input name="toPrice" type="text" class="form-control" placeholder="To Price" aria-label="To Price">
@@ -172,7 +166,7 @@
                             <div class="dropdown-divider"></div>                                                        
                    
                             <div class="dropdown-divider"></div>
-                            <button type="submit" class="btn btn-outline-dark">Filter</button>
+                            <button type="submit" class="btn btn-outline-dark">Filtrar</button>
                         </form>
                     </div>
                 </div>
@@ -231,7 +225,7 @@
         @empty
         <div class="row">
             <div class="col-12">
-                <h1>No result found... <i class="fa fa-frown-o" aria-hidden="true"></i></h1>
+                <h1>No hay resultados... <i class="fa fa-frown-o" aria-hidden="true"></i></h1>
             </div>
         </div>
         @endforelse

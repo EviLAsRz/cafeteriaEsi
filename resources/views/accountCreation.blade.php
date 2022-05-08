@@ -37,7 +37,7 @@
                 @csrf
 
                 <div class="row mb-5">
-                    <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                    <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="row mb-5">
-                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Direccion de correo') }}</label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="row mb-5">
-                    <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                    <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
 
                     <div class="col-md-6">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -79,13 +79,13 @@
                 </div>
 
                 <div class="row mb-5">
-                    <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                    <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Rol') }}</label>
 
                     <div class="col-md-6">
                         <select class="form-select" aria-label="{{ __('Role') }}" name="role">
                             <option value="admin" selected>Admin</option>
-                            <option value="kitchenStaff">Kitchen Staff</option>
-                            <option value="customer">Customer</option>
+                            <option value="kitchenStaff">Staff de la cocina</option>
+                            <option value="customer">Cliente</option>
                         </select>
 
                         @error('role')
@@ -98,7 +98,7 @@
 
                 <div class="row mb-5">
                     <div class="col-md-8 offset-md-2">
-                        <button type="submit" class="primary-btn w-100 px-4">Create</button>
+                        <button type="submit" class="primary-btn w-100 px-4">Crear</button>
                     </div>
                 </div>
 

@@ -17,20 +17,21 @@
 
 @section('content')
 @if (!$activeOrder && !$allOrders->count())
-<!-- when user has not made an order before -->
+<!-- Cuando el usuario aun no ha realizado un pedido -->
 <section class="empty-order min-vh-100 pt-5 flex-center">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
             <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
         </div>
-        <h3 class="mt-4 mb-2">No Orders Yet.</h3>
-        <p class="text-muted">It seems like you haven't made your choice yet...</p>
-        <!-- <a href="{{ route('menu') }}"><button class="primary-btn w-100 py-2">See Menu</button></a> -->
+        <h3 class="mt-4 mb-2">No hay pedidos aun.</h3>
+        <p class="text-muted">Parece que aun no has hecho tu elección...</p>
+        
         <a href="{{ route('menu') }}"><button class="primary-btn mt-3">Discover menu</button></a>
     </div>
 </section>
 @elseif ($activeOrder)
-<!-- todo - session success stuff -->
+<!-- todo - 
+cosas de éxito de la sesión -->
 <section class="active-order d-flex">
     <div class="container">
         <div class="order-metadata mb-4">
@@ -125,11 +126,11 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Order ID</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Final Price</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Pedido ID</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Precio final</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -146,11 +147,11 @@
                     <td>
                         @if ($order->completed)
                             <div class="px-3 alert alert-success">
-                                Fulfilled
+                                Completado
                             </div>  
                         @else
                             <div class="px-3 alert alert-warning">
-                                Not fulfilled
+                                No completado
                             </div>  
                         @endif
                     </td>

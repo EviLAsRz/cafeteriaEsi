@@ -17,14 +17,14 @@
 
 @section('content')
 @if (!$discounts->count())
-<!-- no previous orders -->
+<!-- no pedidos previos -->
 <section class="empty-order min-vh-100 flex-center pt-5">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
             <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
         </div>
-        <h3 class="mt-4 mb-2">No Discount Vouchers Yet.</h3>
-        <p class="text-muted">There seems to be no discount vouchers for now...</p>
+        <h3 class="mt-4 mb-2">Aún no hay cupones de descuento.</h3>
+        <p class="text-muted">Aquí parece que no hay cupones de descuento por ahora...</p>
         <div class="d-flex mt-3">
             <a href="{{ route('createDiscount') }}" class="primary-btn mx-3">Create Discount</a>
         </div>
@@ -34,8 +34,8 @@
 <section class="min-vh-100 d-flex align-items-start mt-5 pt-18vh">
     <div class="container">
         <div class="d-flex justify-content-between">
-        <h2 class="mb-4">Discount Codes</h2>
-        <a href="{{ route('createDiscount') }}" class="primary-btn">+ Create Discount</a>
+        <h2 class="mb-4">Códigos de descuento</h2>
+        <a href="{{ route('createDiscount') }}" class="primary-btn">+ Crear descuento</a>
         </div>
         @if (session('success'))
             <div class="alert alert-success" role="alert">
@@ -45,12 +45,12 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Code</th>
-                    <th scope="col">Percentage</th>
-                    <th scope="col">Min Spend</th>
-                    <th scope="col">Cap</th>
-                    <th scope="col">Start Date</th>
-                    <th scope="col">End Date</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Porcentaje</th>
+                    <th scope="col">Mínimo gasto</th>
+                    <th scope="col">Límite</th>
+                    <th scope="col">Fecha inicial</th>
+                    <th scope="col">Fecha final</th>
                 </tr>
             </thead>
             <tbody>

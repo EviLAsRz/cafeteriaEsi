@@ -46,16 +46,16 @@
                                     <h5 class="text-secondary">{{ $item->menu->price * $item->quantity }} €</h5>
                                 </div>
                                 <div class="col-4 d-flex align-items-baseline justify-content-end">
-                                    <!-- Decrement button -->
+                                    <!-- Botón de decremento -->
                                     <form action="{{ route('cartUpdate', $item) }}" method="post">
                                         @csrf
                                         @method('PUT')
                                         <input type="hidden" name="cartAction" value="-">
                                         <button type="submit" class="btn btn-outline-secondary">-</button>
                                     </form>
-                                    <!-- Quantity -->
+                                    <!-- Cantidad -->
                                     <h5 class="mx-4">{{ $item->quantity }}</h5>
-                                    <!-- Increment button -->
+                                    <!-- Botón de incremento -->
                                     <form action="{{ route('cartUpdate', $item) }}" method="post">
                                         @csrf
                                         @method('PUT')
@@ -70,19 +70,13 @@
                             <h5 class="text-dark">{{ $subtotal }} €</h5>
                         </div>
 
-                        <!-- CHECKOUT ALONG WITH DISCOUNT CODE APPLICATION START -->
+                        <!-- PAGO JUNTO CON EL INICIO DE LA APLICACIÓN DEL CÓDIGO DE DESCUENTO -->
                         <form action="{{ route('cartCheckout') }}" method="post">
                             @csrf
-                            <!--
-                            <div class="d-flex flex-column px-3 mt-5 col-12 align-items-center">
-                                <h5 class="text-secondary">Discount Code</h5>
-                                <input type="text" class="form-control mt-3" name="discountCode" id="discountCode" placeholder="Place your discount code here...">
-                            </div>
-                            -->
                             <h5 class="text-secondary mt-5 text-center">Fecha y hora del pedido</h5>
                             <div class="d-flex flex-column mt-4 px-3">
-                                <!-- Select Date time (only applicable for dine in / take away, not dine in now) -->
-                                <!-- Perform validation to ensure they don't select time that has passed -->
+                                <!-- Seleccione Fecha y hora (solo aplicable para cenar en/para llevar, no para cenar ahora) -->
+                                <!-- Realice la validación para asegurarse de que no seleccionen el tiempo que ha pasado -->
                                 <input class="form-control @error('dateTime') is-invalid @enderror" 
                                 name="dateTime" type="datetime-local" value="{{ old('dateTime') }}" required>
                                 @error('dateTime')
@@ -127,14 +121,14 @@
                             <img src="./images/cart.svg" alt="cart" class="img-fluid">
                         </div>
                         <div class="col-10">
-                            <h4 class="m-3">Empty Cart</h4>
+                            <h4 class="m-3">Carro vacio</h4>
                         </div>
                     </div>
                     <div class="col-12 mt-5">
-                        <p class="h5">Your cart is empty currently. <span><a href="{{ route('menu') }}" class="h5"><u>Add item now</u></a></span></p>
+                        <p class="h5">Tu carrito está vacio. <span><a href="{{ route('menu') }}" class="h5"><u>Añadir producto</u></a></span></p>
                     </div>
                     <div class="col-12 mt-4">
-                        <a href="{{ route('menu') }}"><button class="primary-btn w-100 py-2">See Menu</button></a>
+                        <a href="{{ route('menu') }}"><button class="primary-btn w-100 py-2">Ver menú</button></a>
                     </div>
                 </div>
             </div>

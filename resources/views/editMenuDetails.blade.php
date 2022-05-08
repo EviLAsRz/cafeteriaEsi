@@ -1,9 +1,3 @@
-<!-- 
-// Programmer 1: Mr. Lai Pin Cheng, Developer
-// Description: Edit menu details (Admins can edit menu details)
-// Edited on: 14 April 2022
--->
-
 @extends(( auth()->user()->role == 'customer' ) ? 'layouts.app' : 'layouts.backend' )
 
 @section('links')
@@ -47,7 +41,7 @@
     <div class="dropdown-divider"></div>
 
     <div class="mb-1">
-        <label for="ItemName" class="form-label">Item Name</label>
+        <label for="ItemName" class="form-label">Nombre del producto</label>
         <div class="input-group mb-3">
             <input name="menuName" type="text" class="form-control" placeholder="Name" aria-label="Item Name" value="{{ $menu['name'] }}" required>
         </div>
@@ -56,7 +50,7 @@
     <div class="dropdown-divider"></div>
 
     <div class="mb-1">
-        <label for="ItemPrice" class="form-label">Item Price</label>
+        <label for="ItemPrice" class="form-label">Precio del producto</label>
         <div class="input-group mb-3">
             <span class="input-group-text">RM</span>
             <input name="menuPrice" type="number" min=0 step=0.01 class="form-control price-class" class="form-control" placeholder="Price" aria-label="Item Price" value="{{ $menu['price'] }}" required>
@@ -67,9 +61,9 @@
     <div class="dropdown-divider"></div>
 
     <div class="mb-1">
-        <label for="ItemCost" class="form-label">Item Estimated Cost</label>
+        <label for="ItemCost" class="form-label">Coste estimado del producto</label>
         <div class="input-group mb-3">
-            <span class="input-group-text">RM</span>
+            <span class="input-group-text">€</span>
             <input name="menuEstCost" type="number" min=0 step=0.01 class="form-control price-class" class="form-control" placeholder="Cost" aria-label="Item Cost" value="{{ $menu['estCost'] }}" required>
             <span class="validity"></span>
         </div>
@@ -78,7 +72,7 @@
     <div class="dropdown-divider"></div>
 
     <div class="mb-1">
-        <label for="ItemDescription" class="form-label">Item Description</label>
+        <label for="ItemDescription" class="form-label">Descripción del producto</label>
         <div class="input-group mb-3">
             <textarea name="menuDescription" class="form-control" placeholder="Description" aria-label="Item Description" required>{{ $menu['description'] }}</textarea>
         </div>
@@ -87,22 +81,22 @@
     <div class="dropdown-divider"></div>
     
     <div class="mb-2">
-        <label for="ItemSize" class="form-label">Portion</label>
+        <label for="ItemSize" class="form-label">Parte</label>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="itemSizeInputGroup">Size:</label>
+            <label class="input-group-text" for="itemSizeInputGroup">Tamaño:</label>
             <select name="menuSize" class="form-select" id="itemSizeInputGroup">
                 <option selected>{{ $menu->size }}</option>
                 @if($menu['size'] == "1-2")
                 @else
-                    <option name="menuSize" value="1-2">1 - 2 People</option>
+                    <option name="menuSize" value="1-2">1 - 2 Personas</option>
                 @endif
                 @if($menu['size'] == "3-4")
                 @else
-                    <option name="menuSize" value="3-4">3 - 4 People</option>
+                    <option name="menuSize" value="3-4">3 - 4 Personas</option>
                 @endif
                 @if($menu['size'] == ">5")
                 @else
-                    <option name="menuSize" value=">5">>5 People</option>
+                    <option name="menuSize" value=">5">>5 Personas</option>
                 @endif
             </select>
         </div>
@@ -111,8 +105,8 @@
     <div class="dropdown-divider"></div>
     <div class="row">
         <div>
-            <button type="submit" class="btn btn-outline-success">Save Changes</button>
-            <a href={{ url()->previous() }}><button type="button" class="btn btn-outline-danger">Back</button></a>
+            <button type="submit" class="btn btn-outline-success">Guardar cambios</button>
+            <a href={{ url()->previous() }}><button type="button" class="btn btn-outline-danger">Atrás</button></a>
         </div>
     </div>
 </form>

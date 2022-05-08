@@ -17,32 +17,32 @@
 
 @section('content')
 @if (!$previousOrders->count())
-<!-- no previous orders -->
+<!-- sinpedidos previos -->
 <section class="empty-order min-vh-100 flex-center pt-5">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
             <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
         </div>
-        <h3 class="mt-4 mb-2">No Previous Orders Yet.</h3>
-        <p class="text-muted">There seems to be no previous customer orders for now...</p>
+        <h3 class="mt-4 mb-2">No hay pedidos aun.</h3>
+        <p class="text-muted">Parece que no hay pedidos aun...</p>
         <div class="d-flex mt-3">
-            <a href="{{ route('kitchenOrder') }}" class="primary-btn mx-3">Active Orders</a>
-            <a href="{{ route('dashboard') }}" class="primary-btn mx-3">View Dashboard</a>
+            <a href="{{ route('kitchenOrder') }}" class="primary-btn mx-3">Pedidos activos</a>
+            <a href="{{ route('dashboard') }}" class="primary-btn mx-3">Ver Panel</a>
         </div>
     </div>
 </section>
 @else
 <section class="kitchen-previous-orders min-vh-100 d-flex align-items-center mt-lg-0 mt-3">
     <div class="container mt-lg-0 mt-5">
-        <h2 class="mt-5 mb-4">Previous Orders</h2>
+        <h2 class="mt-5 mb-4">Pedidosprevios</h2>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Order ID</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Final Price</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Pedido ID</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Precio final</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,11 +55,11 @@
                         <td>
                             @if ($order->completed)
                                 <div class="px-3 alert alert-success">
-                                    Fulfilled
+                                    Completado
                                 </div>  
                             @else
                                 <div class="px-3 alert alert-warning">
-                                    Not fulfilled
+                                    No completado
                                 </div>  
                             @endif
                         </td>
@@ -68,7 +68,7 @@
             </tbody>
         </table>
         <div class="my-md-5 mt-4 mb-5 d-flex flex-md-row flex-column justify-content-md-between">
-            <a href="{{ route('kitchenOrder') }}" class="primary-btn">Active Orders</a>
+            <a href="{{ route('kitchenOrder') }}" class="primary-btn">Pedidos activos</a>
             <div class="col-md-8 col-12 d-flex justify-content-md-end justify-content-center">
             {{ $previousOrders->links() }}
             </div>
