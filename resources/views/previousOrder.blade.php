@@ -51,7 +51,7 @@
                         <th scope="row"><a href="{{ route('specificKitchenOrder', $order->id) }}">#{{ $order->id }}</a></th>
                         <td>{{ $order->getOrderDate() }}</td>
                         <td>{{ $order->getOrderTime() }}</td>
-                        <td>RM {{ $order->getTotalFromScratch() }}</td>
+                        <td>{{ $order->getTotalFromScratch() }} € </td>
                         <td>
                             @if ($order->completed)
                                 <div class="px-3 alert alert-success">

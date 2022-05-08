@@ -104,7 +104,7 @@ var productCategorySales = {
     height: 350,
   },
   series: categoricalSales.map(sale => parseFloat(sale)),
-  labels: ['Bocadillo', 'Extra', 'Plato_primero', 'Plato_segundo', 'Aperitivo', 'Dulce', 'Pan', 'Bebidas'],
+  labels: ['Bocadillo', 'Extra', 'Plato_primero', 'Plato_segundo', 'Aperitivo', 'Dulce', 'Pan', 'Bebidas', 'Postre'],
   title: {
     text: 'Product Category Sales',
     style: { fontSize: '18px', cssClass: 'apexcharts-yaxis-title' }

@@ -44,7 +44,6 @@
                 <li><a href="{{ route('dashboard') }}">Panel</a></li>
                 <li><a href="{{ route('kitchenOrder') }}">Pedidos</a></li>
                 <li><a href="{{ route('menu') }}">Menu</a></li>
-                <li><a href="{{ route('discount') }}">Descuento</a></li>
                 <li><a href="{{ route('accountCreation') }}">Cuenta</a></li>
             @endif
                 <li>

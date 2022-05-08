@@ -36,17 +36,6 @@ class DashboardController extends Controller
             ->groupBy('date')->orderBy('date')->get();
         // =============   End of Calculate Revenue   =====================
 
-        // ================   Calculate Estimated Cost   =====================
-        $totalCost = 0;
-        foreach ($oneMonthTransactions as $transaction) {
-            $totalCost += $transaction->order->getTotalCost();
-        }
-        // ===============   End of Calculate Estimated Cost   ===============
-
-        // ================   Calculate Gross Profit   =====================
-        $grossProfit = $totalRevenue - $totalCost;
-        // ================   End of Calculate Gross Profit   =====================
-
         // ================   Total Orders   =====================
         $totalOrders = $oneMonthTransactions->count();
         $dailyOrders = Order::select(
@@ -56,7 +45,8 @@ class DashboardController extends Controller
         // =============   End of Total Orders   =====================
 
         // ================   Product Category   =====================
-        $categoricalSales = [0, 0, 0, 0, 0, 0, 0, 0];
+        /*
+        $categoricalSales = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         foreach ($oneMonthTransactions as $transaction) {
             $cartItems = $transaction->order->cartItems;
 
@@ -82,15 +72,19 @@ class DashboardController extends Controller
                         $categoricalSales[6] += $itemPrice * $itemQty;
                     case "Bebidas":
                         $categoricalSales[7] += $itemPrice * $itemQty;
+                    case "Postre":
+                        $categoricalSales[8] += $itemPrice * $itemQty;
                 }
             }
         }
         for ($i=0; $i < count($categoricalSales) ; $i++) {
             $categoricalSales[$i] = number_format((float)$categoricalSales[$i], 2, '.', '');
         }
+        */
         // =============   End of Product Category   =====================
 
         // =============   Best Selling Product   =====================
+        /*
         $productSales = array();
         foreach ($oneMonthTransactions as $transaction) {
             $cartItems = $transaction->order->cartItems;
@@ -113,6 +107,7 @@ class DashboardController extends Controller
             $temp['y'] = $sale_count;
             array_push($finalProductSales, $temp);
         }
+        */
         // =============   End of Best Selling Product   =====================
 
 
@@ -137,8 +132,7 @@ class DashboardController extends Controller
         array_multisort($dates, $dailyOrders);
         $dailyRevenue = json_encode($dailyRevenue);
         $dailyOrders = json_encode($dailyOrders);
-        $categoricalSales = json_encode($categoricalSales);
-        $finalProductSales = json_encode($finalProductSales);
+        //$categoricalSales = json_encode($categoricalSales);
 
         // calculate times of discount code being used
         $discountCodeUsed = Transaction::where("discount_id", "!=", null)->count();
@@ -147,7 +141,6 @@ class DashboardController extends Controller
         $numCustomer = User::where("role", "customer")->count();
         
         $startDate = Carbon::parse($lastMonthDate)->format('Y-m-d');
-        return view('dashboard', compact("startDate", "today", "totalRevenue", "dailyRevenue", "totalCost", "grossProfit",
-                "totalOrders", "dailyOrders", "discountCodeUsed", "numCustomer", "categoricalSales", "finalProductSales")); 
+        return view('dashboard', compact("startDate", "today", "totalRevenue", "dailyRevenue","totalOrders", "dailyOrders", "numCustomer")); 
     }
 }

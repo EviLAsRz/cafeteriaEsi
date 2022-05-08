@@ -31,33 +31,13 @@ class Order extends Model
         return $this->currencyFormat($totalPrice);
     }
 
-    public function getDiscount($subtotal) {
-        // change the percentage according to discount code
-        if ($this->transaction != null && $this->transaction->discount!= null) {
-            $discount = $this->transaction->discount->percentage;
-            if (($subtotal * $discount/100) < ($this->transaction->discount->cap)) {
-                return $this->currencyFormat($subtotal * $discount/100);
-            } else {
-                return $this->transaction->discount->cap;
-            }
-        } else {
-            return 0;
-        }
-    }
-
-    public function getTax($subtotal, $discount) {
-        return $this->currencyFormat(($subtotal - $discount) * 0.06);
-    }
-
-    public function getTotal($subtotal, $discount, $tax) {
-        return $this->currencyFormat($subtotal - $discount + $tax);
+    public function getTotal($subtotal) {
+        return $this->currencyFormat($subtotal);
     }
 
     public function getTotalFromScratch() {
         $subtotal = $this->getSubtotal();
-        $discount = $this->getDiscount($subtotal);
-        $tax = $this->getTax($subtotal, $discount);
-        return $this->currencyFormat($subtotal - $discount + $tax);
+        return $this->currencyFormat($subtotal);
     }
 
     public function getTotalCost() {

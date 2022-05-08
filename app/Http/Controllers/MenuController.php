@@ -29,8 +29,6 @@ class MenuController extends Controller
             'menuName' => 'required',
             'menuDescription' => 'required',
             'menuPrice' => 'required|regex:/^\d+(\.\d{1,2})?/',
-            'menuEstCost' => 'required|regex:/^\d+(\.\d{1,2})?/',
-            'menuSize' => 'required',
             'menuImage' => 'required|mimes:jpg,png,jpeg|max:10240'
         ]);
         
@@ -78,8 +76,6 @@ class MenuController extends Controller
             'menuName' => 'required',
             'menuDescription' => 'required',
             'menuPrice' => 'required|regex:/^\d+(\.\d{1,2})?/',
-            'menuEstCost' => 'required|regex:/^\d+(\.\d{1,2})?/',
-            'menuSize' => 'required',
         ]);
         
         // Update menu details
@@ -88,11 +84,6 @@ class MenuController extends Controller
         $menu->name = $request->menuName;
         $menu->description = $request->menuDescription;
         $menu->price = $request->menuPrice;
-        $menu->estCost = $request->menuEstCost;
-        $menu->size = $request->menuSize;
-        $menu->allergic = $request->menuAllergic;
-        $menu->vegetarian = $request->menuVegetarian;
-        $menu->vegan = $request->menuVegan;
         $menu->save();
 
         return redirect()->route('menu');

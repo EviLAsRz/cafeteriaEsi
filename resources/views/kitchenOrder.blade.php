@@ -38,7 +38,7 @@ cosas de éxito de la sesiónf -->
     <div class="container">
         <div class="order-metadata mb-4">
             <div class="d-flex">
-                <h2>ORDER #{{ $firstOrder->id }}</h2>
+                <h2>Pedido #{{ $firstOrder->id }}</h2>
                 @if ($firstOrder->completed)
                 <div class="mx-5 px-3 alert alert-success">
                     Completado
@@ -85,13 +85,13 @@ cosas de éxito de la sesiónf -->
                         <div class="mobile d-flex pt-2">
                             <p class="price">{{ number_format($orderItem->menu->price, 2) }}</p>
                             <p class="quantity">x{{ $orderItem->quantity }}</p>
-                            <p class="cart-item-total">€  {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
+                            <p class="cart-item-total">{{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }} € </p>        
                         </div>
                         <p class="text-muted desktop w-75">{{ $orderItem->menu->description }}</p>
                     </div>
-                    <p class="price desktop">€  {{ number_format($orderItem->menu->price, 2) }}</p>
+                    <p class="price desktop">{{ number_format($orderItem->menu->price, 2) }} €</p>
                     <p class="quantity desktop">x{{ $orderItem->quantity }}</p>
-                    <p class="cart-item-total desktop">€  {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
+                    <p class="cart-item-total desktop">{{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }} €</p>
                 </div>
                 <hr>
             @endforeach
@@ -132,7 +132,7 @@ cosas de éxito de la sesiónf -->
                         <th scope="row"><a href="{{ route('specificOrder', $order->id) }}">#{{ $order->id }}</a></th>
                         <td>{{ $order->getOrderDate() }}</td>
                         <td>{{ $order->getOrderTime() }}</td>
-                        <td>RM {{ $order->getTotalFromScratch() }}</td>
+                        <td>{{ $order->getTotalFromScratch() }} €</td>
                         <td>
                             @if ($order->completed)
                                 <div class="px-3 alert alert-success">

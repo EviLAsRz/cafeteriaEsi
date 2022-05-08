@@ -34,6 +34,7 @@
                 <option name="menuType" value="Plato_primero">Primer plato</option>
                 <option name="menuType" value="Plato_segundo">Segundo plato</option>
                 <option name="menuType" value="Bebidas">Bebidas</option>
+                <option name="menuType" value="Postre">Postres</option>
             </select>
         </div>
     </div>
@@ -61,46 +62,12 @@
     <div class="dropdown-divider"></div>
 
     <div class="mb-1">
-        <label for="ItemCost" class="form-label">Coste estimado del producto</label>
-        <div class="input-group mb-3">
-            <span class="input-group-text">€</span>
-            <input name="menuEstCost" type="number" min=0 step=0.01 class="form-control price-class" class="form-control" placeholder="Cost" aria-label="Item Cost" value="{{ $menu['estCost'] }}" required>
-            <span class="validity"></span>
-        </div>
-    </div>
-
-    <div class="dropdown-divider"></div>
-
-    <div class="mb-1">
         <label for="ItemDescription" class="form-label">Descripción del producto</label>
         <div class="input-group mb-3">
             <textarea name="menuDescription" class="form-control" placeholder="Description" aria-label="Item Description" required>{{ $menu['description'] }}</textarea>
         </div>
     </div>
-
-    <div class="dropdown-divider"></div>
-    
-    <div class="mb-2">
-        <label for="ItemSize" class="form-label">Parte</label>
-        <div class="input-group mb-3">
-            <label class="input-group-text" for="itemSizeInputGroup">Tamaño:</label>
-            <select name="menuSize" class="form-select" id="itemSizeInputGroup">
-                <option selected>{{ $menu->size }}</option>
-                @if($menu['size'] == "1-2")
-                @else
-                    <option name="menuSize" value="1-2">1 - 2 Personas</option>
-                @endif
-                @if($menu['size'] == "3-4")
-                @else
-                    <option name="menuSize" value="3-4">3 - 4 Personas</option>
-                @endif
-                @if($menu['size'] == ">5")
-                @else
-                    <option name="menuSize" value=">5">>5 Personas</option>
-                @endif
-            </select>
-        </div>
-    </div>
+   
 
     <div class="dropdown-divider"></div>
     <div class="row">

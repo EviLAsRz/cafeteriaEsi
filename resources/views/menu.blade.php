@@ -18,7 +18,7 @@
 <section class="menu" style="margin-top: 17vh;">
     <div class="container">
         <a href={{"./filter?menuType="}} class="menu-title">
-            <h2 class="d-flex justify-content-center menu-title">MENU</h2>
+            <h2 class="d-flex justify-content-center menu-title">MENÚ</h2>
         </a>
         @if (session('success'))
         <div class="alert alert-success fixed-bottom" role="alert" style="width:500px;left:30px;bottom:20px">
@@ -56,6 +56,7 @@
                                         <option name="menuType" value="Plato_primero">Primer plato</option>
                                         <option name="menuType" value="Plato_segundo">Segundo plato</option>
                                         <option name="menuType" value="Bebidas">Bebidas</option>
+                                        <option name="menuType" value="Postre">Postres</option>
                                     </select>
                                 </div>
                             </div>
@@ -65,7 +66,7 @@
                             <div class="mb-1">
                                 <label for="ItemName" class="form-label">Nombre del producto</label>
                                 <div class="input-group mb-3">
-                                    <input name="menuName" type="text" class="form-control" placeholder="Name" aria-label="Item Name" required>
+                                    <input name="menuName" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
                                 </div>
                             </div>
 
@@ -75,7 +76,7 @@
                                 <label for="ItemPrice" class="form-label">Precio del producto</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">€</span>
-                                    <input name="menuPrice" type="number" min=0 step=0.01 class="form-control price-class" placeholder="Price" aria-label="Item Price" required>
+                                    <input name="menuPrice" type="number" min=0 step=0.01 class="form-control price-class" placeholder="Precio" aria-label="Precio" required>
                                     <span class="validity"></span>
                                 </div>
                             </div>                            
@@ -85,7 +86,7 @@
                             <div class="mb-1">
                                 <label for="ItemDescription" class="form-label">Descripción del producto</label>
                                 <div class="input-group mb-3">
-                                    <textarea name="menuDescription" class="form-control" placeholder="Description" aria-label="Item Description" required></textarea>
+                                    <textarea name="menuDescription" class="form-control" placeholder="Descripción" aria-label="Descripción" required></textarea>
                                 </div>
                             </div>
 
@@ -111,6 +112,7 @@
                     <button type="submit" name="menuType" value="Plato_primero" class="btn btn-light menu-type-button">Primer plato</button>
                     <button type="submit" name="menuType" value="Plato_segundo" class="btn btn-light menu-type-button">Segundo plato</button>
                     <button type="submit" name="menuType" value="Bebidas" class="btn btn-light menu-type-button">Bebidas</button>
+                    <button type="submit" name="menuType" value="Postre" class="btn btn-light menu-type-button">Postres</button>
                 </form>
             </div>
         @else
@@ -125,12 +127,13 @@
                     <button type="submit" name="menuType" value="Plato_primero" class="btn btn-light menu-type-button">Primer plato</button>
                     <button type="submit" name="menuType" value="Plato_segundo" class="btn btn-light menu-type-button">Segundo plato</button>
                     <button type="submit" name="menuType" value="Bebidas" class="btn btn-light menu-type-button">Bebidas</button>
+                    <button type="submit" name="menuType" value="Postre" class="btn btn-light menu-type-button">Postres</button>
                 </form>
             </div>
         @endif
             <div class="col-md-2 d-flex align-items-center">
                 <div class="dropstart w-100 d-flex justify-content-end">    
-                    <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" id="filter-button">Filter <i class="fa fa-filter" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" id="filter-button">Filtrar <i class="fa fa-filter" aria-hidden="true"></i></button>
                     <div class="dropdown-menu">
                         <form method="get" action="{{ route('filterMenu') }}" class="px-4 py-3 " style="min-width: 350px">    
                             <div class="mb-2">
@@ -147,6 +150,7 @@
                                         <option name="menuType" value="Plato_primero">Primer plato</option>
                                         <option name="menuType" value="Plato_segundo">Segundo plato</option>
                                         <option name="menuType" value="Bebidas">Bebidas</option>
+                                        <option name="menuType" value="Postre">Postres</option>
                                     </select>
                                 </div>
                             </div>
@@ -157,9 +161,9 @@
                                 <label for="PriceRange" class="form-label">Intervalo del precio</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">€</span>
-                                    <input name="fromPrice" type="text" class="form-control" placeholder="From Price" aria-label="From Price">
+                                    <input name="fromPrice" type="text" class="form-control" placeholder="Desde" aria-label="Desde">
                                     <span class="input-group-text">~</span>
-                                    <input name="toPrice" type="text" class="form-control" placeholder="To Price" aria-label="To Price">
+                                    <input name="toPrice" type="text" class="form-control" placeholder="Hasta" aria-label="Hasta">
                                 </div>
                             </div>
                             

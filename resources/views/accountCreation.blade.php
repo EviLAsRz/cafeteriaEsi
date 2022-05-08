@@ -26,7 +26,7 @@
     <br>
     <div class="row d-flex justify-content-center" id="top-bar">
         <div class="col-md-2" id="title">
-            <label>Create Accounts</label>
+            <label>Crear Cuenta</label>
         </div>
     </div>
     <br>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="row mb-5">
-                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Direccion de correo') }}</label>
+                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Dirección de correo') }}</label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -84,7 +84,6 @@
                     <div class="col-md-6">
                         <select class="form-select" aria-label="{{ __('Role') }}" name="role">
                             <option value="admin" selected>Admin</option>
-                            <option value="kitchenStaff">Staff de la cocina</option>
                             <option value="customer">Cliente</option>
                         </select>
 

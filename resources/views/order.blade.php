@@ -21,9 +21,9 @@
 <section class="empty-order min-vh-100 pt-5 flex-center">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
-            <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
+            <img src="{{ URL::asset('/images/cart.svg') }}" alt="">
         </div>
-        <h3 class="mt-4 mb-2">No hay pedidos aun.</h3>
+        <h3 class="mt-4 mb-2">No hay pedidos aún.</h3>
         <p class="text-muted">Parece que aun no has hecho tu elección...</p>
         
         <a href="{{ route('menu') }}"><button class="primary-btn mt-3">¡Descubre el menú!</button></a>
@@ -39,11 +39,11 @@ cosas de éxito de la sesión -->
                 <h2>Pedido #{{ $activeOrder->id }}</h2>
                 @if ($activeOrder->completed)
                 <div class="mx-5 px-3 alert alert-success">
-                    Fulfilled
+                    Realizado
                 </div>
                 @else
                 <div class="mx-5 px-3 alert alert-warning">
-                    Not fulfilled
+                    No realizado
                 </div>
                 @endif
             </div>
@@ -55,7 +55,7 @@ cosas de éxito de la sesión -->
 
         <div class="row">
             <div class="order-cart p-4 mb-5 col-lg-8 col-md-12">
-                <h3 class="pb-4 px-2">Your cart</h3>
+                <h3 class="pb-4 px-2">Tu carrito</h3>
                 <div class="flex-center flex-column order-cart-items">
                 @foreach ($activeOrder->cartItems as $orderItem)
                     <div class="order-cart-item d-flex justify-content-around">
@@ -67,24 +67,24 @@ cosas de éxito de la sesión -->
                                 <h5>{{ $orderItem->menu->name }}</h5>
                                 @if ($orderItem->fulfilled)
                                     <div class="px-3 alert alert-success">
-                                        Fulfilled
+                                    Realizado
                                     </div>  
                                 @else
                                     <div class="px-3 alert alert-warning">
-                                        Not fulfilled
+                                    No realizado
                                     </div>  
                                 @endif
                             </div>
                             <div class="mobile d-flex pt-2">
-                                <p class="price">RM {{ number_format($orderItem->menu->price, 2) }}</p>
+                                <p class="price">{{ number_format($orderItem->menu->price, 2) }} €</p>
                                 <p class="quantity">x{{ $orderItem->quantity }}</p>
-                                <p class="cart-item-total">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
+                                <p class="cart-item-total">{{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }} €</p>        
                             </div>
                             <p class="text-muted desktop">{{ $orderItem->menu->description }}</p>
                         </div>
-                        <p class="price desktop">RM {{ number_format($orderItem->menu->price, 2) }}</p>
+                        <p class="price desktop"> {{ number_format($orderItem->menu->price, 2) }} €</p>
                         <p class="quantity desktop">x{{ $orderItem->quantity }}</p>
-                        <p class="cart-item-total desktop">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
+                        <p class="cart-item-total desktop"> {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }} €</p>
                     </div>
                     <hr>
                 @endforeach
@@ -92,23 +92,15 @@ cosas de éxito de la sesión -->
             </div>
 
             <div class="order-summary p-4 col-lg-3 offset-lg-1 col-md-12">
-                <h3 class="pb-3">Summary</h3>
+                <h3 class="pb-3">Resumen</h3>
                 <div class="d-flex justify-content-between">
                     <h6>Subtotal</h6>
-                    <p>RM {{ $subtotal = $activeOrder->getSubtotal() }}</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <h6>Discount</h6>
-                    <p>-RM {{ $discount = $activeOrder->getDiscount($subtotal) }}</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <h6>Tax (6%)</h6>
-                    <p>RM {{ $tax = $activeOrder->getTax($subtotal, $discount) }}</p>
+                    <p>{{ $subtotal = $activeOrder->getSubtotal() }} €</p>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between">
                     <h6>Total</h6>
-                    <p>RM {{ $activeOrder->getTotal($subtotal, $discount, $tax) }}</p>
+                    <p>{{ $activeOrder->getTotal($subtotal) }} €</p>
                 </div>
             </div>
         </div>
@@ -143,7 +135,7 @@ cosas de éxito de la sesión -->
                     <th scope="row"><a href="{{ route('specificOrder', $order->id) }}">#{{ $order->id }}</a></th>
                     <td>{{ $order->getOrderDate() }}</td>
                     <td>{{ $order->getOrderTime() }}</td>
-                    <td>RM {{ $order->getTotalFromScratch() }}</td>
+                    <td>{{ $order->getTotalFromScratch() }} €</td>
                     <td>
                         @if ($order->completed)
                             <div class="px-3 alert alert-success">
