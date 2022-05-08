@@ -60,7 +60,7 @@ class DashboardController extends Controller
         // =============   End of Total Orders   =====================
 
         // ================   Product Category   =====================
-        $categoricalSales = [0, 0, 0, 0, 0, 0, 0];
+        $categoricalSales = [0, 0, 0, 0, 0, 0, 0, 0];
         foreach ($oneMonthTransactions as $transaction) {
             $cartItems = $transaction->order->cartItems;
 
