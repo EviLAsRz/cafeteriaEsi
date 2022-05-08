@@ -17,7 +17,7 @@
 
 @section('content')
 @if (!$previousOrders->count())
-<!-- sinpedidos previos -->
+<!-- sin pedidos previos -->
 <section class="empty-order min-vh-100 flex-center pt-5">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
@@ -34,7 +34,7 @@
 @else
 <section class="kitchen-previous-orders min-vh-100 d-flex align-items-center mt-lg-0 mt-3">
     <div class="container mt-lg-0 mt-5">
-        <h2 class="mt-5 mb-4">Pedidosprevios</h2>
+        <h2 class="mt-5 mb-4">Pedidos previos</h2>
         <table class="table table-hover">
             <thead>
                 <tr>

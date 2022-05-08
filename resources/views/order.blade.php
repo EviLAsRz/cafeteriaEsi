@@ -26,7 +26,7 @@
         <h3 class="mt-4 mb-2">No hay pedidos aun.</h3>
         <p class="text-muted">Parece que aun no has hecho tu elección...</p>
         
-        <a href="{{ route('menu') }}"><button class="primary-btn mt-3">Discover menu</button></a>
+        <a href="{{ route('menu') }}"><button class="primary-btn mt-3">¡Descubre el menú!</button></a>
     </div>
 </section>
 @elseif ($activeOrder)
@@ -122,7 +122,7 @@ cosas de éxito de la sesión -->
 @endif
 <section class="order-histories">
     <div class="container">
-        <h2 class="mb-4">Previous Orders</h2>
+        <h2 class="mb-4">Pedidos previos</h2>
         <table class="table table-hover">
             <thead>
                 <tr>

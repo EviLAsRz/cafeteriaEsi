@@ -22,7 +22,7 @@
     <input name="menuID" type="hidden" value="{{ $menu['id'] }}">
 
     <div class="mb-2">
-        <label for="formFile" class="form-label">Item Image (Only png, jpg, jpeg) Max Size: 10MB</label>
+        <label for="formFile" class="form-label">Imagen del producto (Solo png, jpg, jpeg) Tamaño máximo: 10MB</label>
         <input name="menuImage" class="form-control" type="file" id="item-image" required>
     </div>
     

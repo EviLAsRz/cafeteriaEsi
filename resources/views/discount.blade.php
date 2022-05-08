@@ -26,7 +26,7 @@
         <h3 class="mt-4 mb-2">Aún no hay cupones de descuento.</h3>
         <p class="text-muted">Aquí parece que no hay cupones de descuento por ahora...</p>
         <div class="d-flex mt-3">
-            <a href="{{ route('createDiscount') }}" class="primary-btn mx-3">Create Discount</a>
+            <a href="{{ route('createDiscount') }}" class="primary-btn mx-3">Crear descuento</a>
         </div>
     </div>
 </section>
@@ -59,8 +59,8 @@
                         <th scope="row"><a href="{{ route('specificDiscount', $discount->id) }}">
                             {{ $discount->discountCode }} </a></th>
                         <td>{{ $discount->percentage }}%</td>
-                        <td>RM{{ number_format($discount->minSpend, 2) }}</td>
-                        <td>RM{{ number_format($discount->cap, 2) }}</td>
+                        <td>€{{ number_format($discount->minSpend, 2) }}</td>
+                        <td>€{{ number_format($discount->cap, 2) }}</td>
                         <td>{{ $discount->startDate }}</td>
                         <td>{{ $discount->endDate }}</td>
                     </tr>

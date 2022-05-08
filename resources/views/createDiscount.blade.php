@@ -1,4 +1,3 @@
-
 @extends('layouts.backend')
 
 @section('links')
@@ -21,7 +20,7 @@
         <form action="{{ route('createDiscount') }}" method="post">
         @csrf
         <div class="mb-3">
-            <label for="discountCode" class="form-label">Discount Code</label>
+            <label for="discountCode" class="form-label">Código de descuento</label>
             <input type="text" class="form-control @error('discountCode') is-invalid @enderror" 
                 id="discountCode" name="discountCode" value="{{ old('discountCode') }}">
             <div id="emailHelp" class="form-text">Consejo: el código de descuento debe ser único y tener un nombre significativo.</div>

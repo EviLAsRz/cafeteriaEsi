@@ -21,11 +21,11 @@
     <input name="menuID" type="hidden" value="{{ $menu['id'] }}">
 
     <div class="mb-2">
-        <label for="ItemType" class="form-label">Item Type</label>
+        <label for="ItemType" class="form-label">Categoría del producto</label>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="itemTypeInputGroup">Type:</label>
+            <label class="input-group-text" for="itemTypeInputGroup">Categoría:</label>
             <select name="menuType" class="form-select" id="itemTypeInputGroup" >
-                <option selected>{{ $menu['type'] }}</option>
+                <option selected>{{ $menu['categoria'] }}</option>
                 <option name="menuType" value="Bocadillo">Bocadillo</option>
                 <option name="menuType" value="Dulce">Dulce</option>
                 <option name="menuType" value="Pan">Pan</option>
@@ -52,7 +52,7 @@
     <div class="mb-1">
         <label for="ItemPrice" class="form-label">Precio del producto</label>
         <div class="input-group mb-3">
-            <span class="input-group-text">RM</span>
+            <span class="input-group-text">€</span>
             <input name="menuPrice" type="number" min=0 step=0.01 class="form-control price-class" class="form-control" placeholder="Price" aria-label="Item Price" value="{{ $menu['price'] }}" required>
             <span class="validity"></span>
         </div>

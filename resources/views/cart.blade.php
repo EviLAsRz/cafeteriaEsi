@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('links')
@@ -109,7 +108,7 @@
                             </div>
                             <button type="submit" class="primary-btn mt-5 w-100">confirmar</button>
                         </form>
-                        <!-- CHECKOUT END -->
+                        <!-- FINAL DE LA VERIFICACIÓN -->
                     </div>
                 </div>
             </div>

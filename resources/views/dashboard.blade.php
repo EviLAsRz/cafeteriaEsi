@@ -1,5 +1,3 @@
-
- 
 @extends('layouts.backend')
 
 @section('links')
@@ -29,8 +27,8 @@
             <div class="flex-center">
             <img src="{{ URL::asset('/images/calendar.svg') }}" style="height: 32px; width: 32px;">
             </div>
-            <p class="flex-center mt-lg-0 px-3">De: {{ $startDate }}</p>
-            <p class="flex-center mt-lg-0 px-3">Para: {{ $today }} </p>
+            <p class="flex-center mt-lg-0 px-3">Desde: {{ $startDate }}</p>
+            <p class="flex-center mt-lg-0 px-3">Hasta: {{ $today }} </p>
             </div>
         </div>
     </div>

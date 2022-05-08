@@ -17,7 +17,7 @@
 
 @section('content')
 @if (!$firstOrder)
-<!-- no active orders -->
+<!-- sin pedidos activos -->
 <section class="empty-order min-vh-100 flex-center pt-5">
     <div class="container d-flex flex-column justify-content-center align-items-center">
         <div class="hero-wrapper">
@@ -32,7 +32,8 @@
     </div>
 </section>
 @else
-<!-- todo - session success stuff -->
+<!-- todo - 
+cosas de éxito de la sesiónf -->
 <section class="first-order d-flex">
     <div class="container">
         <div class="order-metadata mb-4">
@@ -40,11 +41,11 @@
                 <h2>ORDER #{{ $firstOrder->id }}</h2>
                 @if ($firstOrder->completed)
                 <div class="mx-5 px-3 alert alert-success">
-                    Fulfilled
+                    Completado
                 </div>
                 @else
                 <div class="mx-5 px-3 alert alert-warning">
-                    Not fulfilled
+                    No completado
                 </div>
                 @endif
             </div>
@@ -55,7 +56,7 @@
         </div>
 
         <div class="order-cart p-4 mb-5">
-            <h3 class="pb-4 px-2">Customer's cart</h3>
+            <h3 class="pb-4 px-2">Carro del cliente</h3>
             <div class="flex-center flex-column order-cart-items">
             @foreach ($firstOrder->cartItems as $orderItem)
                 <div class="order-cart-item d-flex justify-content-around">
@@ -84,13 +85,13 @@
                         <div class="mobile d-flex pt-2">
                             <p class="price">{{ number_format($orderItem->menu->price, 2) }}</p>
                             <p class="quantity">x{{ $orderItem->quantity }}</p>
-                            <p class="cart-item-total">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
+                            <p class="cart-item-total">€  {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>        
                         </div>
                         <p class="text-muted desktop w-75">{{ $orderItem->menu->description }}</p>
                     </div>
-                    <p class="price desktop">RM {{ number_format($orderItem->menu->price, 2) }}</p>
+                    <p class="price desktop">€  {{ number_format($orderItem->menu->price, 2) }}</p>
                     <p class="quantity desktop">x{{ $orderItem->quantity }}</p>
-                    <p class="cart-item-total desktop">RM {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
+                    <p class="cart-item-total desktop">€  {{ number_format($orderItem->menu->price * $orderItem->quantity, 2) }}</p>
                 </div>
                 <hr>
             @endforeach
@@ -135,11 +136,11 @@
                         <td>
                             @if ($order->completed)
                                 <div class="px-3 alert alert-success">
-                                    Fulfilled
+                                    Completado
                                 </div>  
                             @else
                                 <div class="px-3 alert alert-warning">
-                                    Not fulfilled
+                                    No completado
                                 </div>  
                             @endif
                         </td>
