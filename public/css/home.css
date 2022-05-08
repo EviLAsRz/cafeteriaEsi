@@ -1,0 +1,143 @@
+.banner, .contact  {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.contact {
+    min-height: 90vh;
+    padding: 5vh 0;
+}
+
+.title {
+    letter-spacing: 1.5px;
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+}
+
+/* ====================
+        NAV 
+======================*/
+.home-nav {
+    text-shadow: 2px 2px 1px black;
+}
+
+#home .burger div {
+    background-color: #EFEFEF;
+}
+
+#home .logo-name, #register .logo-name, .nav-links li a {
+    color: #EFEFEF;
+}
+
+/* ====================
+        BANNER 
+======================*/
+.banner {
+    background-image: url('/images/cafeteria.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+ .banner::after { /* shader */
+    content: "";
+    position: absolute;
+    background: black;
+    top: 0%;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #EFEFEF;
+    min-height: 100vh;
+    padding-left: 5vw;
+}
+
+.details h3 {
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 3px;
+    z-index: 2;
+}
+
+.details h1 {
+    font-weight: bold;
+    font-size: 45px;
+    margin: 0.6rem 0 2.7rem 0;
+    z-index: 2;
+}
+
+.details button {
+    width: 200px;
+}
+
+/* =============================
+        CONTACT SECTION 
+===============================*/
+.contact {
+    background-color: #e0e0e0;
+}
+
+.contact-wrapper, .chefs-wrapper {
+    min-height: 70vh;
+    margin-bottom: 8vh;
+}
+
+.form-wrapper, .gmap {
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.contact form {
+    max-height: 100%;
+    width: 90%;
+}
+
+textarea {
+    max-height: 30vh;
+}
+
+.msg-btn {
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.msg-btn:hover {
+    background-color: #f69e82;
+}
+
+.gmap {
+    justify-content: center;
+    width: 50%;
+    margin-top: 5vh;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .contact, .chefs, .chefs-wrapper {
+        height: auto;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-wrapper, .contact form, .gmap {
+        width: 90%;
+        margin: auto;
+    }
+
+    .msg-btn {
+        margin-top: 2vh;
+        margin-bottom: 8vh;
+    }
+}
