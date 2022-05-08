@@ -120,7 +120,7 @@
                             <img src="./images/cart.svg" alt="cart" class="img-fluid">
                         </div>
                         <div class="col-10">
-                            <h4 class="m-3">Carro vacio</h4>
+                            <h4 class="m-3">Carro vacío</h4>
                         </div>
                     </div>
                     <div class="col-12 mt-5">

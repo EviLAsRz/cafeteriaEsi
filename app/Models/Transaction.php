@@ -13,10 +13,6 @@ class Transaction extends Model
         'final_amount',
     ];
 
-    public function discount() {
-        return $this->belongsTo(Discount::class);
-    }
-
     public function order() {
         return $this->belongsTo(Order::class);
     }

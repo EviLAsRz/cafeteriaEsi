@@ -17,10 +17,6 @@ class Menu extends Model
         'description',
         'price',
         'image',
-        'size',
-        'allergic',
-        'vegetarian',
-        'vegan'
     ];
 
     public function cartItems() {

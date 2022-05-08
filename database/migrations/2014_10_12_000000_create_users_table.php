@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('role')->default('customer'); // customer, kitchenStaff, admin, manager
+            $table->string('role')->default('customer');
         });
     }
 

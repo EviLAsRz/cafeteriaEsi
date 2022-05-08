@@ -52,9 +52,6 @@
                     <li><a href="{{ route('order') }}">Pedido</a></li>
                     @elseif (auth()->user()->role != 'customer')
                     <li><a href="{{ route('kitchenOrder') }}">Pedido</a></li>
-                    @if (auth()->user()->role == 'admin')
-                    <li><a href="{{ route('discount') }}">Descuento</a></li>
-                    @endif
                     @endif
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

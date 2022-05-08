@@ -20,7 +20,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'role', // Either "customer" , "kitchenStaff" or "admin"
+        'role',
     ];
 
     /**

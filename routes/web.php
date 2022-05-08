@@ -42,8 +42,8 @@ Route::put('/staff/order/update/{orderItem}', [OrderController::class, 'orderSta
 Route::get('/staff/previous-order', [OrderController::class, 'previousOrder'])->name('previousOrder');
 
 // PayPal
-Route::get('/process-transaction/{transactionAmount}/{orderId}/{discountID}', [PayPalController::class, 'processTransaction'])->name('processTransaction');
-Route::get('/success-transaction/{transactionAmount}/{orderId}/{discountID}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('/process-transaction/{transactionAmount}/{orderId}', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('/success-transaction/{transactionAmount}/{orderId}', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('/cancel-transaction/{orderId}', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 
 // Panel

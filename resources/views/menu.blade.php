@@ -180,10 +180,10 @@
         
 
 
-        <div class="d-flex flex-wrap mt-4 mb-5">
+        <div class="d-flex flex-wrap mt-1 mb-4">
         @forelse ($menus as $menu)
             
-            <div class="card col-md-3 col-6 d-flex align-items-center">
+            <div class="card col-md-2 col-5 d-flex align-items-center">
                 <div class="card-body w-100">
                     <form class="d-flex flex-column justify-content-between h-100" action="{{ route('addToCart') }}" method="post">
                         @csrf

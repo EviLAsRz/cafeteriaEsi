@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\CartItem;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+
 
 class CartController extends Controller
 {
@@ -82,51 +82,13 @@ class CartController extends Controller
         }
 
         $total = $subtotal;
-        $discountID = -1;
-
-        // Verify discount code
-        if ($request->discountCode != "" and $request->discountCode != null) {
-            $discountCode = strtoupper($request->discountCode);
-            $usableDiscountCode = Discount::where("discountCode", $discountCode)->first();
-
-            // If discount code exists
-            if ($usableDiscountCode) {
-                // If Available for use
-                if (($usableDiscountCode->startDate <= Carbon::today()) and (($usableDiscountCode->endDate >= Carbon::today()))) {
-                    // If the spending is less than minimum spend of the discount code, give error
-                    if ($usableDiscountCode->minSpend > $subtotal) {
-                        return redirect()
-                            ->route('cart')
-                            ->with('error', "You need to spend at least RM ".$usableDiscountCode->minSpend." in order to use this discount code.");
-                    }
-
-                    // Everything is okay. The discount code can be used.
-                    $discountAmount = $subtotal * $usableDiscountCode->percentage/100;
-                    if ($discountAmount > $usableDiscountCode->cap) {
-                        $discountAmount = $usableDiscountCode->cap;
-                    }
-                    $total = $subtotal - $discountAmount;
-                    $discountID = $usableDiscountCode->id;
-                    
-                } else {
-                    return redirect()
-                        ->route('cart')
-                        ->with('error', "The discount code is unusable currently.");
-                }
-            } else {
-                return redirect()
-                    ->route('cart')
-                    ->with('error', "The discount code doesn't exist.");
-            }
-        }
 
         // add tax of 6% to total amount
         $total = $this->currencyFormat($total * 1.06);
 
         // Create order
         $order = auth()->user()->orders()->create($data);
-        
-        // subtotal for now, it will be 'total' after discounting.
-        return redirect()->route('processTransaction', ['transactionAmount' => $total, 'orderId' => $order->id, 'discountID' => $discountID]); 
+
+        return redirect()->route('processTransaction', ['transactionAmount' => $total, 'orderId' => $order->id]); 
     }
 }

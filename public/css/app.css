@@ -31,7 +31,7 @@
   --bs-gray-900: #212529;
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
-  --bs-success: #198754;
+  --bs-success: #fff;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
@@ -2814,7 +2814,7 @@ textarea.form-control-lg {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #198754;
+  color: #fff;
 }
 
 .valid-tooltip {
@@ -2839,7 +2839,7 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: #198754;
+  border-color: #fff;
   padding-right: calc(1.6em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -2874,13 +2874,13 @@ textarea.form-control-lg {
   border-color: #198754;
 }
 .was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
-  background-color: #198754;
+  background-color: #fff;
 }
 .was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: #198754;
+  color: #fff;
 }
 
 .form-check-inline .form-check-input ~ .valid-feedback {
@@ -3086,17 +3086,17 @@ textarea.form-control-lg {
 
 .btn-success {
   color: #fff;
-  background-color: #198754;
+  background-color: #fff;
   border-color: #198754;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: #157347;
+  background-color: #fff;
   border-color: #146c43;
 }
 .btn-check:focus + .btn-success, .btn-success:focus {
   color: #fff;
-  background-color: #157347;
+  background-color: #fff;
   border-color: #146c43;
   box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
 }
@@ -3110,7 +3110,7 @@ textarea.form-control-lg {
 }
 .btn-success:disabled, .btn-success.disabled {
   color: #fff;
-  background-color: #198754;
+  background-color: #fff;
   border-color: #198754;
 }
 
@@ -3315,27 +3315,27 @@ textarea.form-control-lg {
 }
 
 .btn-outline-success {
-  color: #198754;
+  color: #ffffff;
   border-color: #198754;
 }
 .btn-outline-success:hover {
   color: #fff;
-  background-color: #198754;
+  background-color: #ffffff;
   border-color: #198754;
 }
 .btn-check:focus + .btn-outline-success, .btn-outline-success:focus {
-  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+  box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
 }
 .btn-check:checked + .btn-outline-success, .btn-check:active + .btn-outline-success, .btn-outline-success:active, .btn-outline-success.active, .btn-outline-success.dropdown-toggle.show {
   color: #fff;
-  background-color: #198754;
+  background-color: #ffffff;
   border-color: #198754;
 }
 .btn-check:checked + .btn-outline-success:focus, .btn-check:active + .btn-outline-success:focus, .btn-outline-success:active:focus, .btn-outline-success.active:focus, .btn-outline-success.dropdown-toggle.show:focus {
-  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+  box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
 }
 .btn-outline-success:disabled, .btn-outline-success.disabled {
-  color: #198754;
+  color: #ffffff;
   background-color: transparent;
 }
 
@@ -4029,8 +4029,8 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -4543,7 +4543,7 @@ textarea.form-control-lg {
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.rem;
 }
 
 .card-subtitle {
@@ -11316,7 +11316,7 @@ a {
 }
 
 a:hover, .logo-name:hover {
-    color: rgb(206,50,50) !important;
+    color: rgb(25, 135, 84) !important;
 }
 
 li {
@@ -11376,7 +11376,7 @@ nav.home-nav {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 22px;
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
 }
 
@@ -11454,7 +11454,7 @@ nav.home-nav {
     }
 
     .burger-hover {
-        background-color: rgb(206,50,50) !important;
+        background-color: rgb(1,141,15) !important;
     }
 
     .nav-links {

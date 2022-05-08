@@ -41,14 +41,14 @@ button {
 }
 
 .primary-btn {
-    background-color: rgb(2, 85, 20);
+    background-color: rgb(255, 255, 255);
     color: white;
     transition: background-color 0.8s, color 0.8s;
     z-index: 2;
 }
 
 .primary-btn:hover {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(255, 255, 255);
     color: rgb(61, 61, 61) !important;
 }
 
@@ -87,7 +87,7 @@ nav.home-nav {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-size: 22px;
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
 }
 

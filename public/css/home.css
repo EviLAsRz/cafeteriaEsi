@@ -17,9 +17,6 @@
 /* ====================
         NAV 
 ======================*/
-.home-nav {
-    text-shadow: 2px 2px 1px black;
-}
 
 #home .burger div {
     background-color: #EFEFEF;
@@ -85,7 +82,7 @@
     background-color: #e0e0e0;
 }
 
-.contact-wrapper, .chefs-wrapper {
+.contact-wrapper{
     min-height: 70vh;
     margin-bottom: 8vh;
 }
@@ -122,7 +119,7 @@ textarea {
 
 
 @media screen and (max-width: 1024px) {
-    .contact, .chefs, .chefs-wrapper {
+    .contact, .chefs{
         height: auto;
     }
 

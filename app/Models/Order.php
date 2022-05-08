@@ -43,7 +43,7 @@ class Order extends Model
     public function getTotalCost() {
         $totalCost = 0;
         foreach ($this->cartItems as $item) {
-            $totalCost += floatval($item->menu->estCost) * floatval($item->quantity);
+            $totalCost += floatval($item->menu->price) * floatval($item->quantity);
         }
         return $this->currencyFormat($totalCost);
     }
