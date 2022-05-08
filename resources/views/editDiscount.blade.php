@@ -1,8 +1,3 @@
-<!-- 
-    Programmer Name: Ms. Lim Jia Yong, Project Manager
-    Description: Contains a form that allow admins to modify a specific discount voucher
-    Edited on: 10 April 2022
- -->
 
 @extends('layouts.backend')
 

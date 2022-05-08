@@ -1,8 +1,3 @@
-/* 
-    Programmer Name: Ms. Lim Jia Yong, Project Manager
-    Description: Frontend interactions for the system
-    Edited on: 28 February 2022
-*/
 
 // Global variables
 const dark = "rgb(82, 82, 82)";

@@ -1,9 +1,4 @@
-<!-- 
-    Programmer 1: Mr. Tan Wei Kang, Developer
-    Programmer 2: Ms. Lim Jia Yong, Project Manager
-    Description: Renders graphs and charts for data analysis
-    Edited on: 29 March 2022
- -->
+
  
 @extends('layouts.backend')
 

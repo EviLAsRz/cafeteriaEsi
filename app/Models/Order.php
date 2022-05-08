@@ -1,8 +1,4 @@
 <?php
-// Programmer Name: Ms. Lim Jia Yong, Project Manager
-// Description: Defines relationship of order table with other database tables, 
-//              contains other helpful functions for calculating order cost
-// Edited on: 1 March 2022
 
 namespace App\Models;
 

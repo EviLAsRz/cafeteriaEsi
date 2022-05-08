@@ -1,7 +1,4 @@
 <?php
-// Programmer Name: Ms. Lim Jia Yong, Project Manager
-// Description: Creates dummy user data, read README.md for more info
-// Edited on: 15 March 2022
 
 namespace Database\Factories;
 

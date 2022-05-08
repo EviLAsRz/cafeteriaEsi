@@ -1,7 +1,4 @@
 <?php
-// Programmer 1: Mr. Lai Pin Cheng, Developer
-// Description: Manage menu (Customers can view and filter menu while admins can view, filter, add, edit, and delete menu items)
-// Edited on: 14 April 2022
 
 namespace App\Http\Controllers;
 

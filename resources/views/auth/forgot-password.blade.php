@@ -25,13 +25,13 @@
     
                         <div class="card-body">
                             <div class="col-md-10 offset-md-1 mb-4 text-sm text-gray-600">
-                                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                                {{ __('¿Te has olvidado de tu contraseña? No te preocupes. Solo déjanos saber tu correo y te enviaremos un mensaje para cambiar tu contraseña por una nueva.') }}
                             </div>
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
     
                                 <div class="row my-4">
-                                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                                    <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Dirección de correo') }}</label>
     
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -47,7 +47,7 @@
                                 <div class="row mb-2">
                                     <div class="col-md-8 offset-md-2">
                                         <button type="submit" class="primary-btn w-100">
-                                            {{ __('Email Password Reset Link') }}
+                                            {{ __('Cambiar contraseña') }}
                                         </button>
                                     </div>
                                 </div>

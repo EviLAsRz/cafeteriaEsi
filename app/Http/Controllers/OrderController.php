@@ -1,10 +1,5 @@
 <?php
-// Programmer Name: Ms. Lim Jia Yong, Project Manager
-// Description: Manage orders 
-//      - Customers can create new order, view order status and view previous orders
-//      - Admins can view all orders
-//      - Kitchen staff can view all orders and update order status
-// Edited on: 20 March 2022
+
 
 namespace App\Http\Controllers;
 

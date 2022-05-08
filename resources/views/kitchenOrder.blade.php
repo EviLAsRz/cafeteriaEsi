@@ -1,8 +1,3 @@
-<!-- 
-    Programmer Name: Ms. Lim Jia Yong, Project Manager
-    Description: Page where kitchen staffs may view and update order status 
-    Edited on: 15 March 2022
- -->
 
 @extends(( auth()->user()->role == 'customer' ) ? 'layouts.app' : 'layouts.backend' )
 

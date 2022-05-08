@@ -1,7 +1,4 @@
 <?php
-// Programmer Name: Ms. Lim Jia Yong, Project Manager
-// Description: Definition of Order table in SQLite database
-// Edited on: 3 March 2022
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

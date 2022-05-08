@@ -1,8 +1,4 @@
 <?php
-// Programmer 1: Ms. Lim Jia Yong, Project Manager
-// Programmer 2: Mr. Tan Wei Kang, Developer
-// Description: Manage discount codes (create, read, update, delete)
-// Edited on: 28 March 2022
 
 namespace App\Http\Controllers;
 

@@ -1,8 +1,4 @@
 <?php
-// Programmer 1: Mr. Tan Wei Kang, Developer
-// Programmer 2: Ms. Lim Jia Yong, Project Manager
-// Description: Query database to display relevant data in the form of graphs and charts
-// Edited on: 29 March 2022
 
 namespace App\Http\Controllers;
 

@@ -1,8 +1,3 @@
-<!-- 
-Programmer Name: Ms. Lim Jia Yong, Project Manager
-Description: Custom 404 page for non-existing routes
-Edited on: 28 March 2022
--->
 
 @extends('layouts.app')
 
@@ -27,14 +22,14 @@ Edited on: 28 March 2022
             <img src="{{ URL::asset('/images/empty_order.svg') }}" alt="">
         </div>
         <h3 class="mt-4 mb-2">404</h3>
-        <p class="text-muted">Oops, it seems this page doesn't exist...</p>
+        <p class="text-muted">parece quee sta pagina no existe...</p>
         @guest
-            <a href="{{ route('home') }}" class="primary-btn mt-3 py-2 px-3 rounded">Home</a>
+            <a href="{{ route('home') }}" class="primary-btn mt-3 py-2 px-3 rounded">Inicio</a>
         @else
             @if (auth()->user()->role == 'customer')
-            <a href="{{ route('home') }}" class="primary-btn mt-3 py-2 px-3 rounded">Home</a>
+            <a href="{{ route('home') }}" class="primary-btn mt-3 py-2 px-3 rounded">Inicio</a>
             @else
-            <a href="{{ route('dashboard') }}" class="primary-btn mt-3 py-2 px-3 rounded">Dashboard</a>
+            <a href="{{ route('dashboard') }}" class="primary-btn mt-3 py-2 px-3 rounded">Panel</a>
             @endif
         @endguest
     </div>

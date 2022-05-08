@@ -75,24 +75,22 @@
         </header>
         <ul>
         @if (auth()->user()->role == 'admin')
-            <li ><a href="{{ route('dashboard') }}" id="sidebar-dashboard"><i class="fa fa-th-large" aria-hidden="true"></i>Dashboard</a></li>
+            <li ><a href="{{ route('dashboard') }}" id="sidebar-dashboard"><i class="fa fa-th-large" aria-hidden="true"></i>Panel</a></li>
             <br>
-            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
+            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Pedidos</a></li>
             <br>
-            <li ><a href="{{ route('menu') }}" id="sidebar-menu"><i class="fa fa-book" aria-hidden="true"></i>Menu</a></li>
+            <li ><a href="{{ route('menu') }}" id="sidebar-menu"><i class="fa fa-book" aria-hidden="true"></i>Menú</a></li>
             <br>
-            <li ><a href="{{ route('discount') }}" id="sidebar-discount"><i class="fa fa-ticket" aria-hidden="true"></i>Discount</a></li>
-            <br>
-            <li ><a href="{{ route('accountCreation') }}" id="sidebar-account"><i class="fa fa-user" aria-hidden="true"></i>Account</a></li>
+            <li ><a href="{{ route('accountCreation') }}" id="sidebar-account"><i class="fa fa-user" aria-hidden="true"></i>Cuenta</a></li>
             <br>
         @else
-            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Orders</a></li>
+            <li ><a href="{{ route('kitchenOrder') }}" id="sidebar-orders"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Pedidos</a></li>
             <br>
         @endif
             <li >
                 <a href="{{ route('logout') }}" id="sidebar-logout" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>{{ __('Logout') }}
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>{{ __('Cerrar Sesión') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
