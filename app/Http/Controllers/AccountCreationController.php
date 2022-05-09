@@ -55,7 +55,7 @@ class AccountCreationController extends Controller
             'role' => $request->role
         ]);
 
-        // redirect back to account creation page along with a success session.
+        // redirect back to account creation page
         return redirect()->route('accountCreation')->with('success', 'Account created!');
     }
 }

@@ -122,7 +122,6 @@ class MenuController extends Controller
         return redirect()->route('menu');
     }
 
-    // Query database according to filtering options
     public function filter(Request $request)
     {
         $menu = Menu::query();

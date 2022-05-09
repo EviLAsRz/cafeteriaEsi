@@ -13,19 +13,19 @@ class OrderController extends Controller
         return $this->middleware('auth');
     }
 
-    public function index() { // Cust regular order page
+    public function index() {
         $activeOrder = auth()->user()->orders()->where('completed', 0)->orderBy('dateTime', 'desc')->first();
         $allOrders = auth()->user()->orders()->orderBy('dateTime', 'desc')->paginate(8);
         return view('order', compact('activeOrder', 'allOrders'));
     }
 
-    public function show(Order $order) { // Customer specific order page
+    public function show(Order $order) {
         $activeOrder = $order;
         $allOrders = auth()->user()->orders()->orderBy('dateTime', 'desc')->paginate(8);
         return view('order', compact('activeOrder', 'allOrders'));
     }
 
-    public function kitchenOrder() { // Kitchen or Admin's order page
+    public function kitchenOrder() {
         if (auth()->user()->role == 'customer')
             abort(403, 'This route is only meant for restaurant staffs.');
 
@@ -34,7 +34,7 @@ class OrderController extends Controller
         return view('kitchenOrder', compact('firstOrder', 'activeOrders'));
     }
 
-    public function specificKitchenOrder(Order $order) { // Kitchen or Admin's specific order page
+    public function specificKitchenOrder(Order $order) {
         if (auth()->user()->role == 'customer')
             abort(403, 'This route is only meant for restaurant staffs.');
 
@@ -43,7 +43,7 @@ class OrderController extends Controller
         return view('kitchenOrder', compact('firstOrder', 'activeOrders'));
     }
 
-    public function orderStatusUpdate(CartItem $orderItem) { // Kitchen or Admin update order status
+    public function orderStatusUpdate(CartItem $orderItem) {
         if (auth()->user()->role == 'customer')
             abort(403, 'This route is only meant for restaurant staffs.');
 
@@ -60,12 +60,10 @@ class OrderController extends Controller
         return redirect()->route('kitchenOrder');
     }
 
-    public function previousOrder() { // Kitchen or Admin view all previous orders
+    public function previousOrder() {
         if (auth()->user()->role == 'customer')
             abort(403, 'This route is only meant for restaurant staffs.');
 
-        // this is actually 'previousOrders' not 'activeOrders', but i name it this way 
-        // just for the blade's variable naming sake
         $previousOrders = Order::where('completed', 1)->orderBy('dateTime', 'desc')->paginate(8);
         return view('previousOrder', compact('previousOrders'));
     }

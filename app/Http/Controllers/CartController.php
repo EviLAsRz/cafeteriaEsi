@@ -71,8 +71,8 @@ class CartController extends Controller
             abort(403, 'This route is only meant for customers.');
             
         $data = $this->validate($request, [
-            'type' => ['required'], // order type (dineIn / takeAway)
-            'dateTime' => ['required', 'after_or_equal:today'], // order date time (when the user wants to be served.)
+            'type' => ['required'],
+            'dateTime' => ['required', 'after_or_equal:today'], // order date time
         ]);
 
         $subtotal = 0;

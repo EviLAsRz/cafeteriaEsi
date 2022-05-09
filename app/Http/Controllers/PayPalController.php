@@ -10,7 +10,6 @@ use App\Models\Order;
 class PayPalController extends Controller
 {
 
-    // only authenticated users are allowed to use this controller.
     public function __construct()
     {
         $this->middleware('auth');
