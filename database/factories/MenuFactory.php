@@ -18,7 +18,6 @@ class MenuFactory extends Factory
             'description' => rtrim($this->faker->sentence(5), '.'),
             'price' => round($this->faker->randomFloat(4, 1, 99), 2),
             'image' => $this->getImage(),
-            'size' => $this->getSize(),
         ];
     }
 
@@ -26,9 +25,4 @@ class MenuFactory extends Factory
         return "storage/{$this->faker->sentence(1)}png";
     }
 
-    private function getSize() {
-        $options = array('small', 'large');
-        $rand = array_rand($options);
-        return $options[$rand];
-    }
 }

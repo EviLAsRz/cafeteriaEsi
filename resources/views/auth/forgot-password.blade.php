@@ -21,7 +21,7 @@
             <div class="row d-flex align-items-center justify-content-center min-vh-100">
                 <div class="col-lg-6 col-10">
                     <div class="card">
-                        <div class="card-header"><h3 class="text-center py-3">Forgot Password</h3></div>
+                        <div class="card-header"><h3 class="text-center py-3">Recuperar Contraseña</h3></div>
     
                         <div class="card-body">
                             <div class="col-md-10 offset-md-1 mb-4 text-sm text-gray-600">
